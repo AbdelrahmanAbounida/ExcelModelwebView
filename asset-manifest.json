@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.65789801.css",
-    "main.js": "/static/js/main.79010ce5.js",
-    "index.html": "/index.html",
-    "main.65789801.css.map": "/static/css/main.65789801.css.map",
-    "main.79010ce5.js.map": "/static/js/main.79010ce5.js.map"
+    "main.css": "/ExcelModelwebView/static/css/main.65789801.css",
+    "main.js": "/ExcelModelwebView/static/js/main.b450fe03.js",
+    "index.html": "/ExcelModelwebView/index.html",
+    "main.65789801.css.map": "/ExcelModelwebView/static/css/main.65789801.css.map",
+    "main.b450fe03.js.map": "/ExcelModelwebView/static/js/main.b450fe03.js.map"
   },
   "entrypoints": [
     "static/css/main.65789801.css",
-    "static/js/main.79010ce5.js"
+    "static/js/main.b450fe03.js"
   ]
 }
