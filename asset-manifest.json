@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/http//AbdelrahmanAbounida.github.io/ExcelModelwebView/static/css/main.65789801.css",
-    "main.js": "/http//AbdelrahmanAbounida.github.io/ExcelModelwebView/static/js/main.79010ce5.js",
-    "index.html": "/http//AbdelrahmanAbounida.github.io/ExcelModelwebView/index.html",
-    "main.65789801.css.map": "/http//AbdelrahmanAbounida.github.io/ExcelModelwebView/static/css/main.65789801.css.map",
-    "main.79010ce5.js.map": "/http//AbdelrahmanAbounida.github.io/ExcelModelwebView/static/js/main.79010ce5.js.map"
+    "main.css": "/ExcelModelwebView/static/css/main.65789801.css",
+    "main.js": "/ExcelModelwebView/static/js/main.79010ce5.js",
+    "index.html": "/ExcelModelwebView/index.html",
+    "main.65789801.css.map": "/ExcelModelwebView/static/css/main.65789801.css.map",
+    "main.79010ce5.js.map": "/ExcelModelwebView/static/js/main.79010ce5.js.map"
   },
   "entrypoints": [
     "static/css/main.65789801.css",
