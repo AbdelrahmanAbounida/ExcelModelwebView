@@ -22,6 +22,7 @@ function App() {
           <Routes>
               <Route path="" element={<MainHeader />} >
                 <Route path="/" element={<HomePage />} />
+                <Route path="/ExcelModelwebView" element={<HomePage />} />
                 <Route path="/excel_model" element={<ExcelModel />} />
               </Route>
           </Routes>
