@@ -3,6 +3,9 @@ import { Stack, Button } from '@mui/material'
 import * as XLSX from 'xlsx'
 import { useSelector } from 'react-redux'
 import { revenuesElements,OperationalCostsElements,timeLinesElements, CapitalInvestmentElements, othersElements } from '../const/const'
+
+
+
 const Home = () => {
 
 
@@ -15,9 +18,9 @@ const Home = () => {
 
 
   const getSpecificData = (type) =>{
-
+    console.log(type)
       switch(type){
-          case 'Volume': return RevenueState.Volume;
+          case 'Volume': console.log("volume");return RevenueState.Volume;
           case 'Annual Volume Growth': return RevenueState.AnnualVolumeGrowth;
           case 'Price':  return RevenueState.Price;
           case 'Annual Price Growth':  return RevenueState.AnnualPriceGrowth;
@@ -49,14 +52,14 @@ const Home = () => {
 
     // revenuesElements
     for (let i = 0; i < revenuesElements.length; i++) {
-      out.push({ Revenues: revenuesElements[i], '': getSpecificData(i) },)
+      out.push({ Revenues: revenuesElements[i], '': getSpecificData(revenuesElements[i]) },)
     }
 
     // OperationalCostsElements
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Operational Costs","":""})
     for (let i = 0; i < OperationalCostsElements.length; i++) {
-      out.push({ "Revenues": OperationalCostsElements[i], '': getSpecificData(i) },)
+      out.push({ "Revenues": OperationalCostsElements[i], '': getSpecificData(revenuesElements[i]) },)
     }
 
     
@@ -64,21 +67,21 @@ const Home = () => {
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Timelines","":""})
     for (let i = 0; i < timeLinesElements.length; i++) {
-      out.push({ "Revenues": timeLinesElements[i], '': getSpecificData(i) },)
+      out.push({ "Revenues": timeLinesElements[i], '': getSpecificData(revenuesElements[i]) },)
     }
 
     // CapitalInvestmentElements
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Capital investments","":""})
     for (let i = 0; i < CapitalInvestmentElements.length; i++) {
-      out.push({ Revenues: CapitalInvestmentElements[i], '': getSpecificData(i) },)
+      out.push({ Revenues: CapitalInvestmentElements[i], '': getSpecificData(revenuesElements[i]) },)
     }
 
     // othersElements
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Others","":""})
     for (let i = 0; i < othersElements.length; i++) {
-      out.push({ Revenues: othersElements[i], '': getSpecificData(i) },)
+      out.push({ Revenues: othersElements[i], '': getSpecificData(revenuesElements[i]) },)
     }
     out.push({"Revenues":"","":""})
 
@@ -90,7 +93,7 @@ const Home = () => {
 
     
     var out = createDataset();
-   
+
     var wb = XLSX.utils.book_new()
     var ws = XLSX.utils.json_to_sheet(out)
 
