@@ -1,0 +1,15 @@
+npm i gh-pages --save-dev
+
+in package.json
+"homepage" : "https//excelModel.github.io/excelModel-react",
+
+
+git init 
+
+git remote add origin https//excelModel.github.io/excelModel-react
+
+in package.json
+"deploy": "gh-pages -d build"
+npm run deploy
+
+

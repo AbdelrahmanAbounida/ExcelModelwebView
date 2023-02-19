@@ -1,0 +1,44 @@
+:root{
+  --color-orange: #ff4e00;
+  --color-orng2: #f5510b;
+  --color-hover: rgb(231, 214, 190);
+  --color-dark: rgb(37, 39, 43);
+  --color-black:rgb(22, 24, 27);
+  --color-light_dark: rgb(56, 57, 61);
+  --container-width-lg: 80%;
+}   
+
+
+.App {
+  text-align: center;
+}
+
+/* input styles */
+
+input{
+  text-decoration: none;
+  transition: all 300ms ease;
+  color: whitesmoke;
+  background-color: var(--color-dark);
+  border: 1px solid orange;
+  border-radius: 40px;   
+  height: 43px;
+  width: 170px;
+  padding: 0 35px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+input:hover{
+  background-color: var(--color-light_dark);
+  color: white;
+}
+input:focus{
+  background-color: black;
+  transform: scale(1.05);
+}
+
+.inpt{
+  display: flex;    
+  gap:20px;
+}
