@@ -21,9 +21,8 @@ function App() {
             <Nav />
           <Routes>
               <Route path="/ExcelModelwebView" element={<MainHeader />} >
-                <Route path="/" element={<HomePage />} />
                 <Route path="/ExcelModelwebView" element={<HomePage />} />
-                <Route path="/excel_model" element={<ExcelModel />} />
+                <Route path="/ExcelModelwebView/excel_model" element={<ExcelModel />} />
               </Route>
           </Routes>
           </Container>
