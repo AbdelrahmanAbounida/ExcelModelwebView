@@ -20,7 +20,7 @@ function App() {
           <Container  sx={{mt:9,ml:open? "13%" : "0"}}>
             <Nav />
           <Routes>
-              <Route path="" element={<MainHeader />} >
+              <Route path="/ExcelModelwebView" element={<MainHeader />} >
                 <Route path="/" element={<HomePage />} />
                 <Route path="/ExcelModelwebView" element={<HomePage />} />
                 <Route path="/excel_model" element={<ExcelModel />} />
