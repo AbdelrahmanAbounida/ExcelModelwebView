@@ -43,7 +43,7 @@ export default function MainHeader() {
     <Box sx={{ display: 'flex',fontFamily:"inherit" }}>
       <CssBaseline />
       <Drawer
-        transitionDuration={{ enter: 1000, exit: 1000 }}
+        transitionDuration={{ enter: 200, exit: 200 }}
         sx={{
           
           flexShrink: 0,

@@ -6,9 +6,9 @@ import {SiMicrosoftexcel} from 'react-icons/si';
 import {MdDashboard} from 'react-icons/md';
 
 
-const section1 = ['Home', 'Excel Model', 'Dashboard'];
+const section1 = ['Home', 'Excel Model'];
 const section2 = [];
-const links1 = ["/ExcelModelwebView", "/ExcelModelwebView/excel_model" ,"/ExcelModelwebView/excel_model"]
+const links1 = ["/ExcelModelwebView", "/ExcelModelwebView/excel_model" ]
 const links2 = []
 
 const iconStyles = {
@@ -21,7 +21,7 @@ const iconStyles = {
 const icons1 = [
     <AiFillHome />,
     <SiMicrosoftexcel />,
-    <MdDashboard />
+    // <MdDashboard />
     ]
 
 const icons2 = [
