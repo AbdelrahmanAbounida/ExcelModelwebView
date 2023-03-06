@@ -2,32 +2,32 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   Revenue:{
-    Volume: 0,
-    AnnualVolumeGrowth: 0,
-    Price: 0,
-    AnnualPriceGrowth: 0,
+    Volume: 100,
+    AnnualVolumeGrowth: 1,
+    Price: 100,
+    AnnualPriceGrowth: 1,
   },
   CapitalInvestment:{
-    capex1: 0,
-    capex2: 0,
-    total: 0,
-    equity: 0,
-    repayment: 0,
+    capex1: 20000,
+    capex2: 20000,
+    total: 40000,
+    equity: 20,
+    repayment: 20,
   },
   OperationalCost:{
-    CostItemVariable: 0,
-    CostItemFixed: 0,
-    CostItemAnnual: 0,
+    CostItemVariable: 20,
+    CostItemFixed: 2000,
+    CostItemAnnual: 1,
   },
   TimeLine:{
-    StartCapex: 0,
-    EndCapex: 0,
-    StartOperations: 0,
-    AssetLife: 0,
+    StartCapex: 2024,
+    EndCapex: 2026,
+    StartOperations: 2027,
+    AssetLife: 25,
   },
   Others:{
-    Income: 0,
-    Interest: 0,
+    Income: 30,
+    Interest: 5,
   }
 }
 
