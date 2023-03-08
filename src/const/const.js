@@ -58,15 +58,15 @@ const DrawerHeader = styled(Paper)(({ theme }) => ({
 
 const revenuesElements = [
     "Volume",
-    "Annual Volume Growth",
+    "Annual Volume Growth (%)",
     "Price",
-    "Annual Price Growth",
+    "Annual Price Growth (%)",
 ]
 
 let OperationalCostsElements = [
-    "Cost Item 1 (variable) as a share of revenue",
+    "Cost Item 1 (variable) as a share of revenue (%)",
     "Cost Item 2 (fixed)",
-    "Cost Item 2 annual growth",
+    "Cost Item 2 annual growth (%)",
 ]
 
 let timeLinesElements = [
@@ -80,13 +80,13 @@ let CapitalInvestmentElements = [
     "Project capex item 1",
     "Project capex item 2",
     "Total project capex",
-    "Equity / (Debt + Equity)",
+    "Equity / (Debt + Equity) (%)",
     "Debt repayment period (years)",
 ]
 
 let othersElements = [
-    "Income tax rate",
-    "Interest rate on debt",
+    "Income tax rate (%)",
+    "Interest rate on debt (%)",
 ]
 
 
