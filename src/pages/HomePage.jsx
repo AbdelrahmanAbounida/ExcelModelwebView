@@ -252,7 +252,11 @@ function IRR(values, guess) {
   return resultRate;
 }
 
-  
+// #############################################################################################
+// ########################################Output#######################################
+// #############################################################################################
+var Project_IRR = Math.round(IRR(FreeCashFlowToFirm) * 100);
+var Equity_IRR = (IRR(FreeCashFlowsForEquityIRR)* 100).toFixed(2);
 
  // ############################################################
   // Create Dataset
@@ -262,43 +266,68 @@ function IRR(values, guess) {
 
     // revenuesElements
     for (let i = 0; i < revenuesElements.length; i++) {
-      out.push({ Revenues: revenuesElements[i], '': getSpecificData(revenuesElements[i]) },)
+      if(revenuesElements[i] == "Annual Volume Growth" || revenuesElements[i] === "Annual Price Growth"){
+        out.push({ Revenues: revenuesElements[i], '':getSpecificData(revenuesElements[i])+"%"},)
+      }
+      else{
+        out.push({ Revenues: revenuesElements[i], '': getSpecificData(revenuesElements[i]) },)
+      }
     }
 
     // OperationalCostsElements
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Operational Costs","":""})
     for (let i = 0; i < OperationalCostsElements.length; i++) {
-      out.push({ "Revenues": OperationalCostsElements[i], '': getSpecificData(OperationalCostsElements[i]) },)
+      if(OperationalCostsElements[i] === "Cost Item 1 (variable) as a share of revenue" || OperationalCostsElements[i] === "Cost Item 2 annual growth"){
+        out.push({ "Revenues": OperationalCostsElements[i], '':getSpecificData(OperationalCostsElements[i])+"%"},)
+      }
+      else{
+        out.push({ "Revenues": OperationalCostsElements[i], '': getSpecificData(OperationalCostsElements[i]) },)
+      }
     }
 
     // CapitalInvestmentElements
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Capital investments","":""})
     for (let i = 0; i < CapitalInvestmentElements.length; i++) {
-      out.push({ Revenues: CapitalInvestmentElements[i], '': getSpecificData(CapitalInvestmentElements[i]) },)
+      if(CapitalInvestmentElements[i] === "Equity / (Debt + Equity)"){
+        out.push({ Revenues: CapitalInvestmentElements[i], '':getSpecificData(CapitalInvestmentElements[i])+"%"},)
+      }
+      else{
+        out.push({ Revenues: CapitalInvestmentElements[i], '': getSpecificData(CapitalInvestmentElements[i]) },)
+      }
     }
 
     // timeLinesElements
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Timelines","":""})
     for (let i = 0; i < timeLinesElements.length; i++) {
-      out.push({ "Revenues": timeLinesElements[i], '': getSpecificData(timeLinesElements[i]) },)
+        out.push({ Revenues: timeLinesElements[i], '': getSpecificData(timeLinesElements[i]) },)
     }
 
     // othersElements
     out.push({"Revenues":"","":""})
     out.push({"Revenues":"Others","":""})
     for (let i = 0; i < othersElements.length; i++) {
-      out.push({ Revenues: othersElements[i], '': getSpecificData(othersElements[i]) },)
+      if(othersElements[i] === "Income tax rate" || othersElements[i] === "Interest rate on debt"){
+        out.push({ Revenues: othersElements[i], '':getSpecificData(othersElements[i])+"%"},)
+      }
+      else{
+        out.push({ Revenues: othersElements[i], '': getSpecificData(othersElements[i]) },)
+      }
     }
     out.push({"Revenues":"","":""})
     return out;
 
   }
 
-  const createModelSheet = () =>{
+  const createOutputSheet = () =>{
+    let out = [];
+    
+    out.push({ "Project_IRR": '', 'Equity_IRR':'' },)
+    out.push({ "Project_IRR": Project_IRR, 'Equity_IRR':Equity_IRR },)
 
+    return out
   }
 
 
@@ -307,18 +336,22 @@ function IRR(values, guess) {
   // ############################################################
   const download = () =>{
 
-    var out = createInputSheet();
+    var input = createInputSheet();
+    var output = createOutputSheet();
     var wb = XLSX.utils.book_new()
-    var ws1 = XLSX.utils.json_to_sheet(out)
+
+    var ws1 = XLSX.utils.json_to_sheet(input)
+    var ws2 = XLSX.utils.json_to_sheet([])
 
     XLSX.utils.book_append_sheet(wb,ws1, "Sheet1");
+    XLSX.utils.book_append_sheet(wb,ws2, "Sheet2");
+    XLSX.utils.sheet_add_aoa(ws2, [['Project IRR']], {origin: 'C4'})
+    XLSX.utils.sheet_add_aoa(ws2, [[Project_IRR + "%"]], {origin: 'D4'})
+    XLSX.utils.sheet_add_aoa(ws2, [['Equity IRR']], {origin: 'C5'})
+    XLSX.utils.sheet_add_aoa(ws2, [[Equity_IRR + "%"]], {origin: 'D5'})
     XLSX.writeFile(wb, "Output.xlsx");
   }
-// #############################################################################################
-// ########################################Output#######################################
-// #############################################################################################
-var Project_IRR = Math.round(IRR(FreeCashFlowToFirm) * 100);
-var Equity_IRR = (IRR(FreeCashFlowsForEquityIRR)* 100).toFixed(2);
+
 
 console.log(`Project IRR = ${Project_IRR}%`);
 console.log(`Equity IRR = ${Equity_IRR}%`);

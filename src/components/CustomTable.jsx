@@ -63,14 +63,14 @@ const CustomTable = (props) => {
 
         switch(type){
             case 'Volume': return currentRevenue.Volume;
-            case 'Annual Volume Growth (%)': return currentRevenue.AnnualVolumeGrowth;
+            case 'Annual Volume Growth': return currentRevenue.AnnualVolumeGrowth;
             case 'Price':  return currentRevenue.Price;
-            case 'Annual Price Growth (%)':  return currentRevenue.AnnualPriceGrowth;
+            case 'Annual Price Growth':  return currentRevenue.AnnualPriceGrowth;
 
             case 'Project capex item 1': ; return currentCapitalInvestment.capex1;
             case 'Project capex item 2':  return currentCapitalInvestment.capex2;
             case 'Total project capex':  return currentCapitalInvestment.total;
-            case 'Equity / (Debt + Equity) (%)':  return currentCapitalInvestment.equity;
+            case 'Equity / (Debt + Equity)':  return currentCapitalInvestment.equity;
             case 'Debt repayment period (years)':  return currentCapitalInvestment.repayment;
 
             case 'Start of Capex':  return currentTimeLine.StartCapex;
@@ -78,12 +78,12 @@ const CustomTable = (props) => {
             case 'Start of operations':  return currentTimeLine.StartOperations;
             case 'Asset life (years)':  return currentTimeLine.AssetLife;
 
-            case 'Cost Item 1 (variable) as a share of revenue (%)': console.log("variable",currentOperationalCost);  return currentOperationalCost.CostItemVariable;
+            case 'Cost Item 1 (variable) as a share of revenue': console.log("variable",currentOperationalCost);  return currentOperationalCost.CostItemVariable;
             case 'Cost Item 2 (fixed)':  return currentOperationalCost.CostItemFixed;
-            case 'Cost Item 2 annual growth (%)':  return currentOperationalCost.CostItemAnnual;
+            case 'Cost Item 2 annual growth':  return currentOperationalCost.CostItemAnnual;
 
-            case 'Income tax rate (%)':  return currentOthers.Income;
-            case 'Interest rate on debt (%)':  return currentOthers.Interest;
+            case 'Income tax rate':  return currentOthers.Income;
+            case 'Interest rate on debt':  return currentOthers.Interest;
             default: return 0;
 
         }
@@ -113,14 +113,14 @@ const CustomTable = (props) => {
 
         switch(type){
             case "Volume": setCurrentRevenue({...currentRevenue,Volume:Number(event.target.value)});break;
-            case "Annual Volume Growth (%)":setCurrentRevenue({...currentRevenue,AnnualVolumeGrowth:Number(event.target.value)});break;
+            case "Annual Volume Growth":setCurrentRevenue({...currentRevenue,AnnualVolumeGrowth:Number(event.target.value)});break;
             case "Price": setCurrentRevenue({...currentRevenue,Price:Number(event.target.value)});break;
-            case "Annual Price Growth (%)":setCurrentRevenue({...currentRevenue,AnnualPriceGrowth:Number(event.target.value)});break;
+            case "Annual Price Growth":setCurrentRevenue({...currentRevenue,AnnualPriceGrowth:Number(event.target.value)});break;
 
             case 'Project capex item 1':  setCurrentCapitalInvestment({...currentCapitalInvestment,capex1:Number(event.target.value),total:Number(event.target.value)+currentCapitalInvestment.capex2});break;
             case 'Project capex item 2':  setCurrentCapitalInvestment({...currentCapitalInvestment,capex2:Number(event.target.value),total:Number(event.target.value)+currentCapitalInvestment.capex1});break;
             case 'Total project capex':  setCurrentCapitalInvestment({...currentCapitalInvestment,total:Number(event.target.value)});break;
-            case 'Equity / (Debt + Equity) (%)':  setCurrentCapitalInvestment({...currentCapitalInvestment,equity:Number(event.target.value)});break;
+            case 'Equity / (Debt + Equity)':  setCurrentCapitalInvestment({...currentCapitalInvestment,equity:Number(event.target.value)});break;
             case 'Debt repayment period (years)':  setCurrentCapitalInvestment({...currentCapitalInvestment,repayment:Number(event.target.value)});break;
 
             case 'Start of Capex': setCurrentTimeLine({...currentTimeLine,StartCapex:Number(event.target.value)});break;
@@ -128,12 +128,12 @@ const CustomTable = (props) => {
             case 'Start of operations':  setCurrentTimeLine({...currentTimeLine,StartOperations:Number(event.target.value)});break;
             case 'Asset life (years)':  setCurrentTimeLine({...currentTimeLine,AssetLife:Number(event.target.value)});break; 
 
-            case 'Cost Item 1 (variable) as a share of revenue (%)':  setCurrentOperationalCost({...currentOperationalCost,CostItemVariable:Number(event.target.value),CostItemFixed:Number(event.target.value*100)}); break;
+            case 'Cost Item 1 (variable) as a share of revenue':  setCurrentOperationalCost({...currentOperationalCost,CostItemVariable:Number(event.target.value),CostItemFixed:Number(event.target.value*100)}); break;
             case 'Cost Item 2 (fixed)':  setCurrentOperationalCost({...currentOperationalCost,CostItemFixed:Number(event.target.value)});break;
-            case 'Cost Item 2 annual growth (%)':  setCurrentOperationalCost({...currentOperationalCost,CostItemAnnual:Number(event.target.value)});break;
+            case 'Cost Item 2 annual growth':  setCurrentOperationalCost({...currentOperationalCost,CostItemAnnual:Number(event.target.value)});break;
 
-            case 'Income tax rate (%)':  setCurrentOthers({...currentOthers,Income:Number(event.target.value)});break;
-            case 'Interest rate on debt (%)':  setCurrentOthers({...currentOthers,Interest:Number(event.target.value)});break;
+            case 'Income tax rate':  setCurrentOthers({...currentOthers,Income:Number(event.target.value)});break;
+            case 'Interest rate on debt':  setCurrentOthers({...currentOthers,Interest:Number(event.target.value)});break;
             default: console.log("un expected field");
         }
     }
