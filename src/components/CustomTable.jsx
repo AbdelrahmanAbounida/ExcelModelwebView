@@ -201,7 +201,7 @@ const CustomTable = (props) => {
             sx={{borderRadius:2,color:"#fff",width:170,py:1,fontSize:17,fontWeight:"bold"}}
             onClick={()=>{handleSave()}}
             >
-            Save
+            Calculate
         </Button>
     </Box>
     </>
